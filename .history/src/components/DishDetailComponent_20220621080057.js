@@ -23,7 +23,7 @@ function RenderDish(dish) {
     );
 }
 
-function RenderComments(comments) {
+function renderComments(comments) {
     if (comments != null) {
         return (
             <div className="col-12 col-md-5 m-1">
@@ -48,26 +48,23 @@ function RenderComments(comments) {
     }
 }
 
-const  DishDetail = (props) => {   
-   
-    if (props.dish != null) {
-       return (
-          <div className="container">
-             <div className="row">
-                <RenderDish dish={props.dish} />
-                <RenderComments comments={props.dish.comments} />
-             </div>
-          </div>
-       );
+function render() {
+    if (this.props.dish != null) {
+        return (
+            <div className="container">
+                <div className="row">
+                    {this.renderDish(this.props.dish)}
+                    {this.renderComments(this.props.dish.comments)}
+                </div>
+            </div>
+        );
     }
     else {
-       return (
-          <div></div> 
-       );
+        return (
+            <div></div>
+        );
     }
-    
-  }
+}
 
 
-
-export default DishDetail;
+export default Dishdetail;
