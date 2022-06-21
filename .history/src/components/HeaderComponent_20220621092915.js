@@ -22,7 +22,7 @@ class Header extends Component {
          <React.Fragment>
             <Navbar dark expand="md" >
                <div className="container">
-                  <div className='row'> 
+                  <div className='row'>
                      <NavbarToggler onClick={this.toggleNav} />
                      <NavbarBrand>
                         <img src="assets/images/logo.png" height="30" width="41" alt="Ristorante Con Fusion" />
@@ -54,7 +54,7 @@ class Header extends Component {
                   </div>
                </div>
             </Navbar>           
-            <div class="jumbotron">
+            <div class="Jumbotron">
                <div className="container">
                   <div className="row row-header">
                      <div className="col-12 col-sm-6">
