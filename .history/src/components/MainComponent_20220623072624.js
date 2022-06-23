@@ -12,20 +12,15 @@ import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
 
 
+class Main extends Component {
 
-  class Main extends Component {
-
-    constructor(props) {
-      super(props);
-  
-      this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {
         dishes: DISHES,
-        comments: COMMENTS,
-        promotions: PROMOTIONS,
-        leaders: LEADERS
-      };
-    }
-  
+        selectedDish: null
+    };
+  }
 
   render() {
 
