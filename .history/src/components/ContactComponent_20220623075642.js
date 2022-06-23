@@ -21,7 +21,6 @@ function Contact(props) {
                         <i className="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
                         </address>
                 </div>
-                
                 <div className="row">
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
@@ -45,7 +44,6 @@ function Contact(props) {
                 </div>
             </div>
         </div>
-        
     );
 }
 
