@@ -61,7 +61,7 @@ const Menu = (props) => {
         );
     });
 
-    
+    console.log('Menu component render invoked')
 
     return (
         <div className="container">

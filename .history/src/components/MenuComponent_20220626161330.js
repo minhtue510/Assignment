@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
     Card, CardImg, CardImgOverlay,
     CardTitle, Breadcrumb, BreadcrumbItem
@@ -61,7 +61,7 @@ const Menu = (props) => {
         );
     });
 
-    
+    console.log('Menu component render invoked')
 
     return (
         <div className="container">
