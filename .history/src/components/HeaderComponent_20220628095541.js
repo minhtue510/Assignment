@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-//import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
-import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Button, 
-   Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
+// import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, jumbotron,
+   Button, Modal, ModalHeader, ModalBody,
+   Form, FormGroup, Input, Label } from 'reactstrap';
+
 
 class Header extends Component {
-
    constructor(props) {
       super(props);
       
       this.state = {
          isNavOpen: false,
          isModalOpen: false
-     };
+      };
       
       this.toggleNav = this.toggleNav.bind(this);
       this.toggleModal = this.toggleModal.bind(this);
       this.handleLogin = this.handleLogin.bind(this);
-
    }
    
    toggleNav() {
@@ -25,25 +25,25 @@ class Header extends Component {
          isNavOpen: !this.state.isNavOpen 
       });
    }
-
    toggleModal() {
       this.setState({
-         isModalOpen: !this.state.isModalOpen
+        isModalOpen: !this.state.isModalOpen
       });
-   }
-
-   handleLogin(event) {
+    }
+    handleLogin(event) {
       this.toggleModal();
       alert("Username: " + this.username.value + " Password: " + this.password.value
             + " Remember: " + this.remember.checked);
       event.preventDefault();
    }
 
+
+   
    render() {
       return (
+         
          <React.Fragment>
-
-            <Navbar dark expand="md" >
+      <Navbar dark expand="md" >
                <div className="container">
                   <div className='row'>
                      <NavbarToggler onClick={this.toggleNav} />
@@ -83,8 +83,7 @@ class Header extends Component {
                      </Collapse>       
                   </div>
                </div>
-            </Navbar> 
-
+            </Navbar>        
             <div class="jumbotron">
                <div className="container">
                   <div className="row row-header">
@@ -95,7 +94,6 @@ class Header extends Component {
                   </div>
                </div>              
             </div>
-
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                <ModalBody>
@@ -128,3 +126,4 @@ class Header extends Component {
 }
 
 export default Header;
+        
