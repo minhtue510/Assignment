@@ -5,6 +5,7 @@ import Menu from './MenuComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import { DISHES } from '../shared/dishes';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Contact from './ContactComponent';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';

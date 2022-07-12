@@ -5,6 +5,7 @@ import Menu from './MenuComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import { DISHES } from '../shared/dishes';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Contact from './ContactComponent';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
@@ -14,14 +15,6 @@ import About from './AboutComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 
-const mapStateToProps = state => {
-  return {
-    dishes: state.dishes,
-    comments: state.comments,
-    promotions: state.promotions,
-    leaders: state.leaders
-  }
-}
 
 
 
@@ -80,5 +73,4 @@ const mapStateToProps = state => {
   }
 }
 
-// export default Main;
-export default withRouter(connect(mapStateToProps)(Main));
+export default Main;
