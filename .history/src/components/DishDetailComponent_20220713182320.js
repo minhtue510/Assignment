@@ -139,7 +139,7 @@ class CommentForm extends Component {
             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
               <Row className="form-group">
                 <Label htmlFor="rating" md={2}>Rating</Label>
-                <Col md={12}>
+                <Col md={10}>
                   <Control.select model=".rating" id="rating" name="rating" className="form-control">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -150,8 +150,8 @@ class CommentForm extends Component {
                 </Col>
               </Row>
               <Row className="form-group">
-                <Label htmlFor="author" md={4}>Your Name</Label>
-                <Col md={12}>
+                <Label htmlFor="author" md={2}>Your Name</Label>
+                <Col md={10}>
                   <Control.text model=".author" id="author" name="author" placeholder="Your Name" 
                   className="form-control" 
                   validators={{
@@ -171,7 +171,7 @@ class CommentForm extends Component {
               </Row>
               <Row className="form-group">
                 <Label htmlFor="comment" md={2}>Comment</Label>
-                <Col md={12}>
+                <Col md={10}>
                 <Control.textarea model=".comment" id="comment" name="comment" rows="6" className="form-control">
                 </Control.textarea>
                 </Col>
@@ -203,34 +203,74 @@ function RenderDish({dish}) {
       </Card>
   );
 }
+//if (comments != null) {
+	// 		return (
+	// 		   <div className="col-12 col-md-5 m-1">
+	// 			  <h4>Comments</h4>
+	// 			  <ul className="list-unstyled">
+	// 			  {comments.map((comment) => {
+	// 				 return (
+	// 					<li key={comment.id}>
+	// 					  <p>{comment.comment}</p>
+	// 					  <p>-- {comment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
+	// 					</li>
+	// 				 );
+	// 			   })}
+	// 			   </ul>
+	// 		   </div>
+	// 		);
+	// 	 }
+	// 	 else {
+	// 		return (
+	// 		   <div></div>
+	// 		);
+	// 	 }
+		 
+	//    }
 
+function RenderComments({comments, postComment, dishId}) {
+  if (comments != null) {
+    return (
+				   <div className="col-12 col-md-5 m-1">
+					  <h4>Comments</h4>
+					  <ul className="list-unstyled">
+					  {comments.map((comment) => {
+						 return (
+							<li key={comment.id}>
+							  <p>{comment.comment}</p>
+							  <p>-- {comment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
+							</li>
+						 );
+					   })}
+					   </ul>
+				   </div>
+				);
+			 }
+			 else {
+				return (
+				   <div></div>
+				);
+			 }
+			 
+		   }
 
-	function RenderComments({ comments, postComment, dishId }) {
-		var commentList = comments.map(comment => {
-			return (
-
-					<li key={comment.id} >
-						{comment.comment}
-						<br /><br />
-						-- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}
-						<br /><br />
-					</li>
-
-			);
-		});
-	
-		return (
-			<div>
-				<h4>Comments</h4>
-				<ul className="list-unstyled">
-
-						{commentList}
-
-				</ul>
-				<CommentForm dishId={dishId} postComment={postComment} />
-			</div>
-		);
-	}
+    return (
+      <div className="text-left">
+        <h4>Comments</h4>
+        <ul className="list-unstyled">
+        </ul>
+        <div>
+          <CommentForm dishId={dishId} postComment={postComment}/>
+        </div>
+      </div>
+    );
+  }
+  else {
+    return (
+      <div>empty</div>
+    );
+  }
+}
 
 const DishDetail = (props) => {
   if (props.isLoading) {

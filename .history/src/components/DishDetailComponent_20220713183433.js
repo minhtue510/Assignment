@@ -150,8 +150,8 @@ class CommentForm extends Component {
                 </Col>
               </Row>
               <Row className="form-group">
-                <Label htmlFor="author" md={4}>Your Name</Label>
-                <Col md={12}>
+                <Label htmlFor="author" md={2}>Your Name</Label>
+                <Col md={10}>
                   <Control.text model=".author" id="author" name="author" placeholder="Your Name" 
                   className="form-control" 
                   validators={{
@@ -171,7 +171,7 @@ class CommentForm extends Component {
               </Row>
               <Row className="form-group">
                 <Label htmlFor="comment" md={2}>Comment</Label>
-                <Col md={12}>
+                <Col md={10}>
                 <Control.textarea model=".comment" id="comment" name="comment" rows="6" className="form-control">
                 </Control.textarea>
                 </Col>

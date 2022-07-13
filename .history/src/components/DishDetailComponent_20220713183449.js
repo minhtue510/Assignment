@@ -150,7 +150,7 @@ class CommentForm extends Component {
                 </Col>
               </Row>
               <Row className="form-group">
-                <Label htmlFor="author" md={4}>Your Name</Label>
+                <Label htmlFor="author" md={2}>Your Name</Label>
                 <Col md={12}>
                   <Control.text model=".author" id="author" name="author" placeholder="Your Name" 
                   className="form-control" 
