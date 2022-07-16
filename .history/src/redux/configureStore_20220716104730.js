@@ -1,3 +1,14 @@
+// import {createStore} from 'redux';
+// import { Reducer, initialState } from './reducer'
+
+// export const ConfigureStore = () => {
+//     const store = createStore(
+//         Reducer, // reducer
+//         initialState, // our initialState
+//     );
+
+//     return store;
+// }
 import {createStore, combineReducers} from 'redux';
 import { Dishes } from './dishes';
 import { Comments } from './comments';
@@ -16,3 +27,4 @@ export const ConfigureStore = () => {
 
     return store;
 }
+
