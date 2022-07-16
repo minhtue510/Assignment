@@ -49,8 +49,7 @@ class Main extends Component {
     const DishWithId = ({match}) => {
       return(
           <DishDetail dish={this.props.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]} 
-            comments={this.props.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))} 
-            addComment={this.props.addComment}/>
+            comments={this.props.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))} />
       );
     };
 
@@ -72,11 +71,41 @@ class Main extends Component {
          <Footer />
       </div>
    );
+    // return (
+    //   <div>
+    //     <Header />
+    //     <div>
+    //       <Switch>
+    //           <Route path='/home' component={HomePage} />
+    //           <Route exact path='/aboutus' component={() => <About leaders={this.props.leaders} />} />} />
+    //           <Route exact path='/menu' component={() => <Menu dishes={this.props.dishes} />} />
+    //           <Route path='/menu/:dishId' component={DishWithId} />
+    //           <Route exact path='/contactus' component={Contact} />
+    //           <Redirect to="/home" />
+    //       </Switch>
+    //     </div>
+    //     <Footer />
+    //   </div>
+    // );
 
+    
+    // return (
+    //   <div>
+    //     <Header />
+    //     <Switch>
+    //       <Route path='/home' component={HomePage} />
+    //       <Route exact path="/aboutus" component={ AboutUsPage } />
+    //       <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
+    //       <Route path='/menu/:dishId' component={DishWithId} />
+    //       <Route exact path='/contactus' component={Contact} />     
+    //       <Redirect to="/home" />
+    //     </Switch>
+    //     <Footer />
+    //   </div>
+    // );
 
   }
 }
 
-
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+export default withRouter(connect(mapStateToProps)(Main));
+// export default Main;

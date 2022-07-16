@@ -72,11 +72,41 @@ class Main extends Component {
          <Footer />
       </div>
    );
+    // return (
+    //   <div>
+    //     <Header />
+    //     <div>
+    //       <Switch>
+    //           <Route path='/home' component={HomePage} />
+    //           <Route exact path='/aboutus' component={() => <About leaders={this.props.leaders} />} />} />
+    //           <Route exact path='/menu' component={() => <Menu dishes={this.props.dishes} />} />
+    //           <Route path='/menu/:dishId' component={DishWithId} />
+    //           <Route exact path='/contactus' component={Contact} />
+    //           <Redirect to="/home" />
+    //       </Switch>
+    //     </div>
+    //     <Footer />
+    //   </div>
+    // );
 
+    
+    // return (
+    //   <div>
+    //     <Header />
+    //     <Switch>
+    //       <Route path='/home' component={HomePage} />
+    //       <Route exact path="/aboutus" component={ AboutUsPage } />
+    //       <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
+    //       <Route path='/menu/:dishId' component={DishWithId} />
+    //       <Route exact path='/contactus' component={Contact} />     
+    //       <Redirect to="/home" />
+    //     </Switch>
+    //     <Footer />
+    //   </div>
+    // );
 
   }
 }
 
-
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+export default withRouter(connect(mapStateToProps)(Main));
+// export default Main;
