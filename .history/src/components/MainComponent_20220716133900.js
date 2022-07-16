@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, 
 	Breadcrumb, BreadcrumbItem, Modal, ModalHeader, ModalBody, 
